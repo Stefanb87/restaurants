@@ -1,0 +1,19 @@
+<div class="main-content">
+    <h4>Opening Hours</h4>
+    <span class="detail-info-close" (click)="onClose()">X</span>
+    <div *ngFor="let details of restaurantDetailInfoData" class="opening-hours-wrapper">
+        <div *ngIf="details[0] === 'Closed' else open">
+            <span>{{ details[1] | titlecase }}</span>
+            <span class="opening-hours">{{ details[0] }}</span>
+        </div>
+        <ng-template #open>
+            <div>
+                <span>{{ details[details.length-1] | titlecase }}</span>
+                <span class="opening-hours">{{ details[0].start }} - {{ details[0].end }}</span>
+            </div>
+            <div *ngIf="details.length === 3">
+                <span class="opening-hours">{{ details[1].start }} - {{ details[1].end }}</span>
+            </div>
+        </ng-template>
+    </div>
+</div>

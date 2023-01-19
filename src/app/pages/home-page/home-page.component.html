@@ -1,0 +1,19 @@
+<h1>Home Page</h1>
+<div class="main-content">
+    <ng-container *ngFor="let restaurant of (restaurantsData$ | async) as restaurants; let i = index;">
+        <div class="basic-info-wrapper">
+            <app-restaurant-basic-info
+                [restaurantName]="restaurant.displayed_what"
+                [restaurantAddress]="restaurant.displayed_where"
+                (moreInfoEvent)="showDetailInfo(i)"
+            ></app-restaurant-basic-info>
+        </div>
+        <div class="detail-info-wrapper">
+            <app-restaurant-detail-info
+                *ngIf="restaurantIndex === i"
+                [restaurantDetailInfoData]="restaurant.opening_hours"
+                (closeEvent)="restaurantIndex = null"
+            ></app-restaurant-detail-info>
+        </div>
+    </ng-container>
+</div>

@@ -1,0 +1,27 @@
+.main-content {
+    padding: 0 10px;
+    position: relative;
+
+    h4 {
+        margin-top: 0;
+    }
+
+    .detail-info-close {
+        position: absolute;
+        right: 0;
+        top: 0;
+        cursor: pointer;
+    }
+
+    .opening-hours-wrapper {
+        margin: 5px 0;
+    
+        div {
+            clear: right;
+        }
+    
+        .opening-hours {
+            float: right;
+        }
+    }
+}

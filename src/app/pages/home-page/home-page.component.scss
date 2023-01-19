@@ -1,0 +1,16 @@
+.main-content {
+    position: relative;
+
+    .basic-info-wrapper {
+        width: 60%;
+        display: inline-block;
+    }
+    
+    .detail-info-wrapper {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 40%;
+        display: inline-block;
+    }
+}
